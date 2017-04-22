@@ -16,8 +16,21 @@ html, body{
 body{
 	box-sizing: border-box;
     font-family: "Helvetica Neue", Helvetica, Verdana, Tahoma, Arial, sans-serif;
+	opacity: 0;
+}
+.anim{
 	animation: fade-in .5s ease-in;
-
+	opacity: 1;
+	.main-wrap{
+		h1{
+			animation: show-from-bottom .9s ease-out;
+		    animation-fill-mode: both;
+		}
+		b{
+			animation: show-from-bottom .9s ease-out .4s;
+		    animation-fill-mode: both;
+		}
+	}
 }
 
 @keyframes fade-in{
@@ -68,8 +81,7 @@ ul{
 		text-align: center;
 		font-style: italic;
 		font-weight: normal;
-		animation: show-from-bottom .9s ease-out .4s;
-	    animation-fill-mode: both;
+		
 	}
 }
 
@@ -79,8 +91,7 @@ h1{
     margin: 20px 0;
     line-height: 60px;
     text-transform: uppercase;
-    animation: show-from-bottom .9s ease-out;
-    animation-fill-mode: both;
+    
 }
 
 @keyframes show-from-bottom{
