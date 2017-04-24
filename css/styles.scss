@@ -94,6 +94,17 @@
 .map{
     width: 100%;
     height: calc(100% - 100px);
+    position: relative;
+    &::before{
+    	content: "";
+    	position: absolute;
+    	width: 80px;
+    	height: 80%;
+    	top: 10%;
+    	right: 0;
+    	z-index: 6;
+    	display: block;
+    }
 }
 
 .show{
