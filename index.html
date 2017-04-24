@@ -12,6 +12,7 @@
 	<header class="header">
 		<nav class="menu">
 			<div class="container">
+				<a href="#mobile-menu" class="toggle-mnu"><span></span></a>
 				<ul>
 					<li><a href="#skill">Скилы</a></li>
 					<li><a href="#how">Как это будет</a></li>
@@ -119,6 +120,11 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script>
+		$(".toggle-mnu").click(function() {
+	        $(this).toggleClass("on");
+	        $('.menu').toggleClass("on");
+	        return false;
+	    });
 		$(window).scroll(function() {
 			var i = 0;
 			$('.animate').each(function(){

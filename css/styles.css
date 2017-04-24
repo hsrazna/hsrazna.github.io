@@ -13,11 +13,11 @@
   width: 33.33%;
   vertical-align: top;
   min-width: 240px; }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 991px) {
     .skill-item {
       width: 50%;
       min-width: 400px; } }
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 479px) {
     .skill-item {
       width: 100%;
       min-width: 0;
@@ -67,7 +67,7 @@
     padding: 15px;
     font-size: 24px;
     line-height: 36px; }
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 991px) {
       .feature-item p {
         text-align: center; } }
 
