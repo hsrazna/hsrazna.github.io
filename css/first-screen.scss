@@ -6,10 +6,12 @@
 	border: 0;
 }
 
-html, body{
+html, body, .wrap{
 	width: 100%;
 	height: 100%;
 }
+
+
 
 *, *::before, *::after{
 	box-sizing: inherit;
@@ -18,6 +20,8 @@ html, body{
 body{
 	box-sizing: border-box;
     font-family: "Helvetica Neue", Helvetica, Verdana, Tahoma, Arial, sans-serif;
+}
+.wrap{
 	opacity: 0;
 }
 .anim{
