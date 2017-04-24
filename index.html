@@ -6,19 +6,16 @@
 	<meta name="format-detection" content="telephone=no">
 	
 	<title>Landing Page</title>
-	<style>
-		*{margin:0;padding:0;border:0}html,body{width:100%;height:100%}*,*::before,*::after{box-sizing:inherit}body{box-sizing:border-box;font-family:"Helvetica Neue", Helvetica, Verdana, Tahoma, Arial, sans-serif;opacity:0}.anim{-webkit-animation:fade-in .5s ease-in;animation:fade-in .5s ease-in;-webkit-animation-fill-mode:both;animation-fill-mode:both}.anim .main-wrap h1{-webkit-animation:show-from-bottom .9s ease-out;animation:show-from-bottom .9s ease-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}.anim .main-wrap b{-webkit-animation:show-from-bottom .9s ease-out .4s;animation:show-from-bottom .9s ease-out .4s;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}ul li{list-style-type:none}.container{max-width:1170px;margin:0 auto;padding-left:15px;padding-right:15px}.content{height:100%;background:transparent url("../img/main.jpg") center no-repeat;background-size:cover;display:table;width:100%;min-height:400px}.content-inner{background:rgba(20,30,50,0.6);height:100%;display:table-cell;width:100%;vertical-align:middle;text-align:center}.main-wrap{color:#fff}.main-wrap b{font-size:24px;width:100%;display:inline-block;text-align:center;font-style:italic;font-weight:normal}h1{font-size:52px;text-align:center;margin:20px 0;line-height:60px;text-transform:uppercase}.show-from-bottom{-webkit-animation:show-from-bottom .9s ease-out;animation:show-from-bottom .9s ease-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}.delay0{-webkit-animation-delay:0;animation-delay:0}.delay1{-webkit-animation-delay:.4s;animation-delay:.4s}.delay2{-webkit-animation-delay:.8s;animation-delay:.8s}.animate{opacity:0}@-webkit-keyframes show-from-bottom{from{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}to{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes show-from-bottom{from{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}to{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}h2{font-size:26px;text-align:center;margin:20px 0;text-transform:uppercase}.menu{position:absolute;top:0;left:0;width:100%;line-height:90px;font-size:0;text-align:right}.menu li{display:inline-block;font-size:18px;padding:0 30px}.menu a{color:#fff;text-transform:uppercase;text-decoration:none}
-	</style>
+	<link rel="stylesheet" href="css/first-screen.css">
 </head>
 <body>
 	<header class="header">
 		<nav class="menu">
 			<div class="container">
 				<ul>
-					<li><a href="#">ссылка</a></li>
-					<li><a href="#">ссылка</a></li>
-					<li><a href="#">ссылка</a></li>
-					<li><a href="#">ссылка</a></li>
+					<li><a href="#skill">Скилы</a></li>
+					<li><a href="#how">Как это будет</a></li>
+					<li><a href="#where">где мы находимся</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -32,6 +29,7 @@
 		</div>
 	</div>
 	<img src="img/main.jpg" onload="document.body.className += 'anim';" style="display: none;">
+	<a id="skill" class="show"></a>
 	<section class="skill">
 		<div class="container">
 			<h2>Мы научим Вас работе&nbsp;с:</h2>
@@ -60,6 +58,7 @@
             </div>
 		</div>
 	</section>
+	<a id="how" class="show"></a>
 	<section class="feature">
 		<div class="container">
 			<div class="feature-items">
@@ -67,7 +66,7 @@
 					<div class="feature-item-img">
 						<img src="img/settings.svg" alt="" width="256" height="256">
 					</div>
-					<p>Учебный материал будет состоять из сквозного примера из реального проекта. Обучение проходит в постоянном контакте с куратором, закрепленным за Вами, который будет давать задание для усвоения пройденного материала и проверять его реализацию.</p>
+					<p>Учебный материал будет состоять из сквозного примера из реального проекта.</p>
 				</div>
 				<div class="feature-item animate">
 					<div class="feature-item-img">
@@ -79,12 +78,39 @@
 					<div class="feature-item-img">
 						<img src="img/team.svg" alt="" width="256" height="256">
 					</div>
-					<p>Мы команда web-разработчиков, готовая делиться своим опытом с начинающими разработчиками и помогать им в дальнейшей работе. Работаем и проживаем в городе Нальчик. У нас есть личные аккаунты на биржах фриланса и тематических форумах с положительными отзывами от наших клиентов.</p>
+					<p>Мы команда web-разработчиков, готовая делиться своим опытом с начинающими разработчиками и помогать им в дальнейшей работе.</p>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section></section>
+	<a id="where" class="show"></a>
+	<section class="map">
+		<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script type="text/javascript">
+			ymaps.ready(init);
+			var zMap,
+				zPlacemark;
+
+			function init(){     
+				zMap = new ymaps.Map("map", {
+					center: [43.476338, 43.583993],
+					zoom: 16
+				});
+
+				zMap.behaviors.disable('scrollZoom'); 
+
+				zPlacemark = new ymaps.Placemark([43.476338, 43.583993], {}, {
+					iconLayout: 'default#image',
+					iconImageHref: '/img/balun.png',
+					iconImageSize: [36, 54],
+					iconImageOffset: [-20, -52]
+				});
+				zMap.geoObjects.add(zPlacemark);
+				zMap.controls.add('mapTools');
+			}
+		</script>
+		<div id="map" class="map-inner"></div>
+	</section>
 	<div class="footer">footer</div>
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -94,11 +120,18 @@
 			$('.animate').each(function(){
 				var imagePos = $(this).offset().top;
 				var topOfWindow = $(window).scrollTop();
-				if (imagePos < topOfWindow+500) {
+				if (imagePos < topOfWindow+$(window).height()-100) {
 					$(this).addClass('show-from-bottom delay'+i);
 					i++;
 				}
 			});
+		});
+		$(".menu").on("click","a", function (event) {
+			event.preventDefault();
+			var id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top}, 1500);
+			return false;
 		});
 	</script>
 </body>
