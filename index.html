@@ -124,7 +124,7 @@
 			$('.animate').each(function(){
 				var imagePos = $(this).offset().top;
 				var topOfWindow = $(window).scrollTop();
-				if (imagePos < topOfWindow+$(window).height()-100) {
+				if (imagePos < topOfWindow+($(window).height()*.75)) {
 					$(this).addClass('show-from-bottom delay'+i);
 					i++;
 				}
