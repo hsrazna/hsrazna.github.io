@@ -20,9 +20,9 @@ html, body, .wrap{
 body{
 	box-sizing: border-box;
     font-family: "Helvetica Neue", Helvetica, Verdana, Tahoma, Arial, sans-serif;
+	opacity: 0;
 }
 .wrap{
-	opacity: 0;
 }
 .anim{
 	animation: fade-in .5s ease-in;
