@@ -60,22 +60,29 @@
 .feature-item{
 	padding: 10px 0;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	justify-content: center;
 	max-width: 970px;
 	margin: 0 auto;
 	&:nth-child(2n){
 		flex-direction: row-reverse;
 	}
 	.feature-item-img{
-		width: 33.33%;
+		flex-basis: 200px;
+		flex-grow: 1;
 		text-align: center;
 		padding: 15px;
 	}
 	p{
-		width: 66.66%;
+		flex-grow: 1;
+		flex-basis: 400px;
 		padding: 15px;
 		font-size: 24px;
 		line-height: 36px;
+		@include desktop(992){
+			text-align: center;
+		}
 	}
 }
 

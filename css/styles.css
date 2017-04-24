@@ -49,20 +49,27 @@
 .feature-item {
   padding: 10px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   max-width: 970px;
   margin: 0 auto; }
   .feature-item:nth-child(2n) {
     flex-direction: row-reverse; }
   .feature-item .feature-item-img {
-    width: 33.33%;
+    flex-basis: 200px;
+    flex-grow: 1;
     text-align: center;
     padding: 15px; }
   .feature-item p {
-    width: 66.66%;
+    flex-grow: 1;
+    flex-basis: 400px;
     padding: 15px;
     font-size: 24px;
     line-height: 36px; }
+    @media only screen and (max-width: 992px) {
+      .feature-item p {
+        text-align: center; } }
 
 .map-inner {
   width: 100%;
