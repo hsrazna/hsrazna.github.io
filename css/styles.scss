@@ -48,10 +48,9 @@
 }
 
 .skill-item-text{
-    line-height: 22px;
+    line-height: 24px;
 	font-size: 18px;
 }
-
 
 .feature{
 	background: #edf6fc;
@@ -59,11 +58,6 @@
 }
 
 .feature-item{
-	// &::after{
-	// 	content:"";
-	// 	display: table;
-	// 	clear: both;
-	// }
 	padding: 10px 0;
 	display: flex;
 	align-items: center;
@@ -85,12 +79,35 @@
 	}
 }
 
-
 .map-inner{
     width: 100%;
-    height: 400px;
+    height: 100%;
+}
+
+.map{
+    width: 100%;
+    height: calc(100% - 100px);
 }
 
 .show{
 	font-size: 0;
+}
+
+.footer{
+	height: 100px;
+	background: lighten(rgba(20,30,50,1), 10%);
+	p{
+		color: #fff;
+		font-size: 20px;
+		font-weight: normal;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 28px;
+	}
+}
+
+.vertical-center{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
