@@ -1,0 +1,238 @@
+@import "vars";
+
+.az-orders{
+	background: #fff;
+	margin: 0 0 30px;
+	box-shadow: 0 8px 16px rgba(24, 34, 41, 0.28);
+}
+
+.az-orders__content{
+	height: 325px;
+}
+
+.az-topbox__p{
+	color: #565f66;
+	font-family: "RobotoRegular";
+	font-size: 12px;
+	line-height: 14px;
+	padding: 0;
+	margin: 5px 0 0 0;
+	@include mobile(1200){
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+
+.az-table{
+	position: relative;
+	padding-top: 40px;
+	height: 100%;
+	min-height: 200px;
+	overflow: hidden;
+	// overflow-x: hidden;
+	// overflow-y: visible;
+	
+}
+
+.az-table__top{
+	position: absolute;
+	height: 40px;
+	top: 0;
+}
+
+.az-table__bottom{
+	overflow: auto;
+}
+
+.az-table__body{
+	white-space: nowrap;
+	max-width: 100000px;
+}
+
+.az-table__col1{
+	width: 125px;
+	min-width: 125px;
+}
+
+.az-table__col2{
+	width: 208px;
+	min-width: 208px;
+}
+
+.az-table__col3{
+	width: 120px;
+	min-width: 120px;
+}
+
+.az-table__col4{
+	width: 116px;
+	min-width: 116px;
+}
+
+.az-table__col5{
+	width: 132px;
+	min-width: 132px;
+}
+
+.az-table__col6{
+	width: 128px;
+	min-width: 128px;
+}
+
+.az-table__col7{
+	width: 177px;
+	min-width: 177px;
+}
+
+.az-table__input{
+	width: 100%;
+}
+
+.az-table__row{
+	font-size: 0;
+	white-space: nowrap;
+	max-width: 100000px;
+	width: auto;
+	&:nth-child(2n){
+		background: #f5f3f2;
+	}
+}
+
+.az-table__head-td{
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: top;
+	height: 41px;
+	line-height: 14px;
+	border-bottom: 1px solid #f37a1f;
+	border-right: 1px solid #fff;
+	background: #d1d0cf;
+	color: #182229;
+	font-family: "RobotoMedium";
+	padding-top: 9px;
+	padding-left: 11px;
+	position: relative;
+	// z-index: 9;
+	&:last-child{
+		border-right: 0;
+	}
+}
+
+.az-table__td{
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: top;
+	color: #182229;
+	font-family: "RobotoRegular";
+	height: 38px;
+	padding: 6px 14px 6px 11px;
+	line-height: 26px;
+	border-right: 1px solid #d1d0cf;
+	&:last-child{
+		border-right: 0;
+	}
+}
+
+.az-table_full-width{
+	.az-table__top, .az-table__head, .az-table__body{
+		width: 100%;
+	}
+	.az-table__bottom .jspPane{
+		width: 100% !important;
+	}
+	.az-table__row{
+		display: flex;
+		width: 100%;
+		.az-table__head-td, .az-table__td{
+			flex: 1 1 100px;
+		}
+	}
+}
+
+.az-table__td_center{
+	padding-left: 30px;
+}
+
+.az-table__input{
+	height: 26px;
+	border: 1px solid #d1d0cf;
+	padding: 0 6px;
+	background: #fff;
+	&[disabled]{
+		background: #fff;
+		color: #81898f;
+	}
+}
+
+.az-scroll-temp{
+	.jspHorizontalBar{
+		height: 18px;
+		background: #f5f3f2;
+		.jspDrag{
+			background: #d1d0cf;
+		}
+		.jspArrow{
+			width: 32px;
+			background: transparent;
+		}
+		.jspArrowRight{
+			background: transparent url(../img/az-jsp-arrow-right.png) no-repeat center;
+		}
+		.jspArrowLeft{
+			background: transparent url(../img/az-jsp-arrow-left.png) no-repeat center;
+		}
+	}
+	.jspVerticalBar{
+		width: 18px;
+		background: #f5f3f2;
+		.jspDrag{
+			background: #d1d0cf;
+		}
+		.jspArrow{
+			height: 32px;
+			background: transparent;
+		}
+		.jspArrowUp{
+			background: transparent url(../img/az-jsp-arrow-up.png) no-repeat center;
+		}
+		.jspArrowDown{
+			background: transparent url(../img/az-jsp-arrow-down.png) no-repeat center;
+		}
+	}
+	.jspTrack{
+		background: #f5f3f2;
+	}
+	.jspCorner{
+		background: #fff;
+	}
+}
+.az-scroll.jspScrollable{
+	@extend .az-scroll-temp;
+}
+.az-scroll2.jspScrollable{
+	@extend .az-scroll-temp;
+}
+.az-table__bottom{
+	@extend .az-scroll-temp;
+	.jspPane{
+		width: auto !important;
+	}
+}
+
+.az-sort{
+	position: absolute;
+	top: 13px;
+	right: 16px;
+	width: 11px;
+	height: 7px;
+	background: transparent url('../img/az-sort.png') center no-repeat;
+	font-size: 0;
+}
+
+// *******************************
+
+.ah-tabsbox{
+	&>div{
+		height: 100%;
+	}
+}

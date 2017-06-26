@@ -1,0 +1,119 @@
+@import "vars";
+
+
+
+
+
+
+
+
+.ah-chat-wrapp{
+	padding: 30px 40px;
+}
+.ah-chat-subtitle{
+	display: block;
+	font-family: "RobotoRegular";
+	color: #565f66;
+	font-size: 14px;
+}
+.ah-chat-userbox{
+	padding: 15px 20px;
+	background: #f5f3f2;
+	@include mobile(480){
+		padding: 25px 60px;
+	}
+}
+.ah-chat-ubox{
+	width: 100%;
+	font-size: 0;
+}
+.ah-chat-imgbox{
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+	@include mobile(768){
+		width: 15%;
+	}
+	@include mobile(992){
+		width: 9%;
+	}
+}
+.ah-chat-ucontent{
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+	padding-left: 15px;
+	padding-top: 10px;
+	@include mobile(768){
+		width: 85%;
+	}
+	@include mobile(992){
+		width: 91%;
+	}
+}
+.ah-chat-uspan{
+	display: block;
+	font-family: "RobotoBold";
+	color: #182229;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+.ah-chat-uspan1{
+	display: block;
+	color: #565f66;
+	font-family: "RobotoRegular";
+	font-size: 12px;
+	@include mobile(480){
+		font-size: 14px;
+	}
+	span{
+		display: inline-block;
+		color: #182229;
+		padding-left: 7px;
+	}
+}
+.ah-chat-wrapp1{
+	width: 100%;
+	max-width: 750px;
+	margin: 0 auto;
+}
+.ah-chat__box{
+	@include mobile(768){
+		max-width: 600px !important;
+	}
+}
+.ah-chat-form{
+	input[type=text]{
+	    @include mobile(768){
+			max-width: 570px !important;
+			margin-left: 9% !important;
+		}
+		@include mobile(768){
+			margin-left: 22%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
