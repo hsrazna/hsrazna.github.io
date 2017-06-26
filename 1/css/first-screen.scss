@@ -11,10 +11,13 @@ html, body, .wrap{
 	height: 100%;
 }
 
-
-
 *, *::before, *::after{
 	box-sizing: inherit;
+}
+
+a, a:focus, a:active, a:hover{
+	text-decoration: none;
+	outline: none;
 }
 
 body{
@@ -22,12 +25,19 @@ body{
     font-family: "Helvetica Neue", Helvetica, Verdana, Tahoma, Arial, sans-serif;
 	opacity: 0;
 }
-.wrap{
+
+.clearfix{
+	&::after{
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
+
 .anim{
 	animation: fade-in .5s ease-in;
-    animation-fill-mode: both;
-    opacity: 1;
+	animation-fill-mode: both;
+	opacity: 1;
 	.main-wrap{
 		h1{
 			animation: show-from-bottom .9s ease-out;
@@ -62,15 +72,37 @@ ul{
 	padding-right: 15px;
 }
 
+.parallax{
+	-webkit-perspective: 300px;
+	perspective: 300px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+	position: relative;
+	&::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: transparent url('../img/main.jpg') center no-repeat;
+		background-size: cover;
+		// background-attachment: fixed;
+		z-index: -1;
+		transform: translateZ(-290px) scale(2);
+	}
+}
+
 .content{
 	height: 100%;
-	background: transparent url('../img/main.jpg') center no-repeat;
-	background-size: cover;
 	display: table;
 	width: 100%;
 	min-height: 400px;
 	transition: .3s;
+	// transform: translateZ(-150px) scale(1.5) translateX(-3px);
 }
+
 .content-inner{
 	background: rgba(20,30,50,0.6);
 	height: 100%;
@@ -147,6 +179,22 @@ h2{
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 2;
+	// transform: translateZ(-150px) scale(1.5) translateY(-50%);
+	// transform-origin: 50% 0;
+}
+
+.menu-left{
+	float: left;
+	line-height: 90px;
+}
+
+.menu-right{
+	float: right;
+	line-height: 90px;
+}
+
+.menu-list{
 	line-height: 90px;
 	font-size: 0;
 	text-align: right;
@@ -181,6 +229,7 @@ h2{
 			text-align: center;
 			z-index: 9;
 			right: 0;
+			transform: translateZ(-300px) scale(2) translateX(-3px);
 			li{
 				padding: 0;
 				display: block;
@@ -196,5 +245,44 @@ h2{
 	}
 }
 
+// .header, .menu, .container, .menu-right, .menu-list{
+// 	transform-style: preserve-3d;
+// 	// position: absolute;
+// 	// z-index: 2;
+// }
+
+// @keyframes show-from-bottom-menu{
+// 	from{
+// 		transform: translateZ(150px) scale(.5) translateX(-3px) translateY(50px);
+// 		opacity: 0;
+// 	}
+// 	to{
+// 		transform: translateZ(150px) scale(.5) translateX(-3px) translateY(0);
+// 		opacity: 1;
+// 	}
+// }
+
+.phones{
+	line-height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 30px;
+	background: url(../img/phone.svg) no-repeat left 5px;
+	background-size: 20px 20px;
+	a{
+		color: #fff;
+		transition: .5s;
+		&:hover{
+			color: #ffcb02;
+		}
+	}
+}
+
+
+address{
+	position: absolute;
+	clip: rect(0,0,0,0);
+	visibility: hidden;
+}
 
 @import "menu-toggle";
